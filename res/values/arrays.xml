@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="coords">
+		<item>Latitude / Longitude</item>
+		<item>UTM</item>
+		<item>MGRS</item>
+	</string-array>
+	<string-array name="goto_coords">
+		<item>Latitude / Longitude</item>
+		<item>UTM</item>
+		<item>MGRS</item>
+	</string-array>
+	<string-array name="accuracy">
+		<item>1 Meter</item>
+		<item>10 Meter</item>
+		<item>100 Meter</item>
+		<item>1000 Meter</item>
+		<item>10000 Meter</item>
+	</string-array>
+	<string-array name="distance">
+		<item>Feet</item>
+		<item>Meters</item>
+		<item>Miles</item>
+		<item>Kilometers</item>
+	</string-array>
+	<string-array name="azimuth">
+		<item>0 to 360</item>
+		<item>-180 to 180</item>
+		<item>-Pi to Pi</item>
+		<item>Mils</item>
+	</string-array>
+</resources>

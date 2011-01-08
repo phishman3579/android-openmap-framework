@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="coords">Measurement Units</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="distance">Distance Units</string>
+    <string name="azimuth">Azimuth Units</string>
+    <string name="mapKey"></string>
+    <string name="app_name">AndroidOpenMapFramework</string>
+</resources>
