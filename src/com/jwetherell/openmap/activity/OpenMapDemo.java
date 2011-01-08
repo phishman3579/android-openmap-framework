@@ -122,8 +122,7 @@ public class OpenMapDemo extends CenteredMapActivity {
 				Utilities.NUMBER_FORMAT.format(length) + htmlSpace + 
 				lengthInRadians.getAbbr() + "<br>"
 				+ "Azimuth:" + htmlSpace +
-				Utilities.NUMBER_FORMAT.format(azimuth) + htmlSpace
-				+ units + "<br>";
+				Utilities.NUMBER_FORMAT.format(azimuth) + htmlSpace + units;
 
 		MessageUtilities.alertUser(getApplicationContext(), Html.fromHtml(html).toString());
 		
