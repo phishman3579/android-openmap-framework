@@ -5,5 +5,5 @@
     <string name="distance">Distance Units</string>
     <string name="azimuth">Azimuth Units</string>
     <string name="mapKey"></string>
-    <string name="app_name">AndroidOpenMapFramework</string>
+    <string name="app_name">OpenMap</string>
 </resources>
