@@ -4,6 +4,11 @@ import com.jwetherell.openmap.common.MGRSPoint;
 import com.jwetherell.openmap.utilities.Utilities;
 import android.location.Location;
 
+/**
+ * This abstract class is used to save globally accessible data.
+ * 
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ */
 public abstract class UserData {
     private static Location currentLocation = null;
     private static double initialLatitude = 39.931261;

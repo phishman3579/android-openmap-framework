@@ -14,6 +14,11 @@ import com.jwetherell.openmap.R;
 import com.jwetherell.openmap.data.UserData;
 import com.jwetherell.openmap.overlay.HashMapItemizedOverlay;
 
+/**
+ * This class extends CustomMapActivity to keep the current location centered on the screen.
+ * 
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ */
 public abstract class CenteredMapActivity extends CustomMapActivity {
 	protected static List<Overlay> mapOverlays = null;
 

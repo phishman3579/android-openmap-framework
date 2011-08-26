@@ -3,6 +3,11 @@ package com.jwetherell.openmap.utilities;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 
+/**
+ * This abstract class provides many static methods to convert between some primitive types.
+ * 
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ */
 public abstract class Utilities {
     public static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
     public static DecimalFormat NUMBER_FORMAT = new DecimalFormat("0.00");

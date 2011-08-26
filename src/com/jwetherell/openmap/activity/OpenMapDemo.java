@@ -23,6 +23,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
+/**
+ * This class extends CenteredMapActivity to handle the user interaction with the map.
+ * 
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ */
 public class OpenMapDemo extends CenteredMapActivity {
 	private static final String htmlSpace = "&nbsp; ";
 	private static LatLonPoint lastLocation = null;
@@ -55,7 +60,6 @@ public class OpenMapDemo extends CenteredMapActivity {
         inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
-    
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

@@ -7,6 +7,11 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.jwetherell.openmap.R;
 
+/**
+ * This abstract class extends Activity to handle drawing the map and setting the default options.
+ * 
+ * @author Justin Wetherell <phishman3579@gmail.com>
+ */
 public abstract class CustomMapActivity extends MapActivity {
 	protected static MapView mapView = null;
     protected static MapController mapController = null;
