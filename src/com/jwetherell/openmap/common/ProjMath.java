@@ -433,5 +433,4 @@ public abstract class ProjMath {
                 rightLon,
                 .001f) && projScale > 1000000f));
     }
-
 }

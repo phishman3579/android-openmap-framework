@@ -435,11 +435,10 @@ public class UTMPoint {
     }
 
     /**
-     * Returns a string representation of the object.
-     * 
-     * @return String representation
+     * {@inheritDoc}
      */
+    @Override
     public String toString() {
        return "Zone_number="+zone_number+", Hemisphere="+zone_letter+", Northing="+northing+", Easting="+easting;
     }
- }
+}

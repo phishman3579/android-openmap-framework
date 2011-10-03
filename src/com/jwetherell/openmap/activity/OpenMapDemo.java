@@ -23,6 +23,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
+
 /**
  * This class extends CenteredMapActivity to handle the user interaction with the map.
  * 
@@ -32,9 +33,11 @@ public class OpenMapDemo extends CenteredMapActivity {
 	private static final String htmlSpace = "&nbsp; ";
 	private static LatLonPoint lastLocation = null;
 	private static LatLonPoint lastClickLocation = null;
-	
-	/** Called when the activity is first created. */
-	@Override
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
@@ -44,8 +47,11 @@ public class OpenMapDemo extends CenteredMapActivity {
 		Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		updateLocation(location);
 	}
-	
-	@Override
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void updateLocation(Location loc) {
 		super.updateLocation(loc);
 
@@ -53,7 +59,10 @@ public class OpenMapDemo extends CenteredMapActivity {
 		double myLon = Utilities.convertPointFromE6(UserData.getLongitudeE6());
 		lastLocation = new LatLonPoint(myLat, myLon);
 	}
-	
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -61,7 +70,10 @@ public class OpenMapDemo extends CenteredMapActivity {
         return true;
     }
 
-	@Override
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent intent = null;
 		switch (item.getItemId()) {
@@ -134,6 +146,10 @@ public class OpenMapDemo extends CenteredMapActivity {
 	}
 
     private OnTouchListener onTouchMapListener = new OnTouchListener() {
+        /**
+         * {@inheritDoc}
+         */
+        @Override
         public boolean onTouch(View v, MotionEvent event) {
             int x = Math.round(event.getX());
             int y = Math.round(event.getY());

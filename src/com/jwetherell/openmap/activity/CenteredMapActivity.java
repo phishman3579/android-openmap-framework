@@ -14,6 +14,7 @@ import com.jwetherell.openmap.R;
 import com.jwetherell.openmap.data.UserData;
 import com.jwetherell.openmap.overlay.HashMapItemizedOverlay;
 
+
 /**
  * This class extends CustomMapActivity to keep the current location centered on the screen.
  * 
@@ -31,8 +32,10 @@ public abstract class CenteredMapActivity extends CustomMapActivity {
 	protected static int minMeters = 10;
 	protected static int minTime = 10;
 
-	/** Called when the activity is first created. */
-	@Override
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
@@ -58,33 +61,48 @@ public abstract class CenteredMapActivity extends CustomMapActivity {
 		mapOverlays.add(gpsOverlay);
 	}
 
-	@Override
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onDestroy() {
 		super.onDestroy();
 		locationManager.removeUpdates(locationListener);
 	}
-	
-	@Override
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onStart() {
 		super.onStart();
 		setCenterOnGps();
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters,locationListener);
 	}
 
-	@Override
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onStop() {
 		super.onStop();
 		locationManager.removeUpdates(locationListener);
 	}
-	
-	@Override
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onResume() {
 		super.onResume();
 		setCenterOnGps();
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters,locationListener);
 	}
 
-	@Override
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onPause() {
 		super.onPause();
 		locationManager.removeUpdates(locationListener);
@@ -108,7 +126,7 @@ public abstract class CenteredMapActivity extends CustomMapActivity {
 
 	private class MapLocationListener implements LocationListener {
 		public void onLocationChanged(Location loc) {
-			if (loc == null) return;
+			if (loc == null) throw new NullPointerException();
 			
 			UserData.setLocation(loc);
 			updateLocation(loc);

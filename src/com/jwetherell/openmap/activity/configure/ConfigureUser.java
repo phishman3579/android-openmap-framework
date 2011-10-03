@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+
 /**
  * This class extends Activity and allows the user to set the default options for the map.
  * 
@@ -19,7 +20,10 @@ import android.widget.Spinner;
  */
 public class ConfigureUser extends Activity {
 
-	@Override
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		

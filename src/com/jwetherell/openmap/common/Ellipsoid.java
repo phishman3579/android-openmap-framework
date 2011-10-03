@@ -136,7 +136,7 @@ public class Ellipsoid {
      * possible selections. Returns null if the Ellipsoid isn't found.
      * 
      * @param name
-     * @return
+     * @return Ellipsoid
      */
     public static Ellipsoid getByName(String name) {
         Ellipsoid[] all = getAllEllipsoids();
@@ -153,10 +153,9 @@ public class Ellipsoid {
     }
 
     /**
-     * Returns a string representation of the object.
-     * 
-     * @return String representation
+     * {@inheritDoc}
      */
+    @Override
     public String toString() {
         return "Ellipsoid[name=" + name + ", radius=" + radius + ", eccsq=" + eccsq + "]";
     }

@@ -645,12 +645,10 @@ public class MGRSPoint extends ZonedUTMPoint {
     }
 
     /**
-     * Returns a string representation of the object.
-     * 
-     * @return String representation
+     * {@inheritDoc}
      */
+    @Override
     public String toString() {
        return mgrs;
     }
 }
-

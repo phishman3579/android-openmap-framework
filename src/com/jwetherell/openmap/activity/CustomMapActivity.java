@@ -7,6 +7,7 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.jwetherell.openmap.R;
 
+
 /**
  * This abstract class extends Activity to handle drawing the map and setting the default options.
  * 
@@ -17,9 +18,11 @@ public abstract class CustomMapActivity extends MapActivity {
     protected static MapController mapController = null;
 
     private static int zoomLevel = 18;
-    
-	/** Called when the activity is first created. */
-	@Override
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
@@ -39,7 +42,10 @@ public abstract class CustomMapActivity extends MapActivity {
 		//Move the map view to the point
 		mapController.setZoom(zoomLevel);
 	}
-    
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected boolean isRouteDisplayed() {
         return false;

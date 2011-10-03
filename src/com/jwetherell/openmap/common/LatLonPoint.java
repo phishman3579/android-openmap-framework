@@ -313,6 +313,10 @@ public class LatLonPoint {
         return GreatCircle.sphericalBetween(getRadLat(), getRadLon(), distance, azimuth);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String toString() {
         return "Lat="+lat+", Lon="+lon;
     }
