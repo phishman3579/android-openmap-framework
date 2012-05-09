@@ -10,48 +10,48 @@
 		<LinearLayout 
 		  	xmlns:android="http://schemas.android.com/apk/res/android"
 		  	android:orientation="vertical" 
-		  	android:layout_width="fill_parent" android:layout_height="fill_parent" 
+		  	android:layout_width="fill_parent" android:layout_height="wrap_content" 
 		  	android:padding="5dp">
 			<TextView android:id="@+id/ConfigureUserMessage"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" 
-				android:text="Configure user settings"
+				android:text="@string/config_user_text"
 				android:textSize="16dip" android:paddingBottom="5dip">
 			</TextView>
 			
 		    <TextView android:id="@+id/input_coords_text"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" 
-				android:text="Coordinates:" android:textSize="16dip">
+				android:text="@string/coordinates_text" android:textSize="16dip">
 			</TextView>
 			<Spinner android:id="@+id/input_coords_spinner"
 				android:layout_height="wrap_content" android:layout_width="fill_parent" 
-				android:prompt="@string/coords" android:hint="Coordinates">
+				android:prompt="@string/coords" android:hint="@string/coordinates_hint">
 			</Spinner>
 			
 			<TextView android:id="@+id/input_accuracy_text"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" 
-				android:text="Accuracy (used in MGRS only):" android:textSize="16dip">
+				android:text="@string/accuracy_text" android:textSize="16dip">
 			</TextView>
 			<Spinner android:id="@+id/input_accuracy_spinner"
 				android:layout_height="wrap_content" android:layout_width="fill_parent" 
-				android:prompt="@string/accuracy" android:hint="Accuracy">
+				android:prompt="@string/accuracy" android:hint="@string/accuracy_hint">
 			</Spinner>
 							
 		    <TextView android:id="@+id/input_distance_text"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" 
-				android:text="Distance Units:" android:textSize="16dip">
+				android:text="@string/distance_text" android:textSize="16dip">
 			</TextView>
 			<Spinner android:id="@+id/input_distance_spinner"
 				android:layout_height="wrap_content" android:layout_width="fill_parent" 
-				android:prompt="@string/distance" android:hint="Distance Units">
+				android:prompt="@string/distance" android:hint="@string/distance_hint">
 			</Spinner>
 											
 		    <TextView android:id="@+id/input_azimuth_text"
 				android:layout_width="wrap_content" android:layout_height="wrap_content" 
-				android:text="Azimuth Units:" android:textSize="16dip">
+				android:text="@string/azimuth_text" android:textSize="16dip">
 			</TextView>
 			<Spinner android:id="@+id/input_azimuth_spinner"
 				android:layout_height="wrap_content" android:layout_width="fill_parent" 
-				android:prompt="@string/azimuth" android:hint="Azimuth Units">
+				android:prompt="@string/azimuth" android:hint="@string/azimuth_hint">
 			</Spinner>
 		</LinearLayout>
 	</ScrollView>
@@ -62,7 +62,7 @@
 		<Button android:id="@+id/configure_user_done" 
 			android:layout_width="wrap_content" android:layout_height="wrap_content" 
 			android:minHeight="64dip" android:minWidth="96dip" 
-			android:text="Done"
+			android:text="@string/done_text"
 			android:layout_centerHorizontal="true">
 		</Button>
 	</RelativeLayout>

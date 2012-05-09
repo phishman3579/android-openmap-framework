@@ -4,6 +4,21 @@
     <string name="accuracy">Accuracy</string>
     <string name="distance">Distance Units</string>
     <string name="azimuth">Azimuth Units</string>
-    <string name="mapKey"></string>
+    <string name="mapKey">0C3pxv0t_GD6GCyNQf5ePXhtRj4WMsDW2BTYogg</string>
     <string name="app_name">OpenMap</string>
+    <string name="config_user_text">"Configure user settings"</string>
+
+    <string name="coordinates_text">"Coordinates:"</string>
+    <string name="coordinates_hint">"Coordinates"</string>
+
+    <string name="accuracy_text">"Accuracy (used in MGRS only):"</string>
+    <string name="accuracy_hint">"Accuracy"</string>
+    
+    <string name="distance_text">"Distance Units:"</string>
+    <string name="distance_hint">"Distance Units"</string>
+    
+    <string name="azimuth_text">"Azimuth Units:"</string>
+    <string name="azimuth_hint">"Azimuth Units"</string>
+
+    <string name="done_text">"Done"</string>
 </resources>

@@ -220,13 +220,9 @@ public class LatLonPoint {
      */
     public final static double wrapLongitude(double lon) {
         if ((lon < -DATELINE) || (lon > DATELINE)) {
-            // System.out.print("LatLonPoint: wrapping longitude "
-            // +
-            // lon);
             lon += DATELINE;
             lon = lon % LON_RANGE;
             lon = (lon < 0) ? DATELINE + lon : -DATELINE + lon;
-            // Debug.output(" to " + lon);
         }
         return lon;
     }
