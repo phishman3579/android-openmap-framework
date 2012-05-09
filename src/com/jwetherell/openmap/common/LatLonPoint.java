@@ -15,7 +15,6 @@
 package com.jwetherell.openmap.common;
 
 public class LatLonPoint {
-    private static final long serialVersionUID = 4416029542303298672L;
     public final static double NORTH_POLE = 90.0;
     public final static double SOUTH_POLE = -NORTH_POLE;
     public final static double DATELINE = 180.0;
