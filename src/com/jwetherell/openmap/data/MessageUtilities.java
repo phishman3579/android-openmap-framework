@@ -11,15 +11,20 @@ import android.widget.Toast;
  * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public abstract class MessageUtilities {
-	/**
-	 * Alert the user using the Toast mechanism.
-	 * @param context Context of the message.
-	 * @param msg String to display.
-	 * @throws NullPointerException if context or msg are NULL.
-	 */
+
+    /**
+     * Alert the user using the Toast mechanism.
+     * 
+     * @param context
+     *            Context of the message.
+     * @param msg
+     *            String to display.
+     * @throws NullPointerException
+     *             if context or msg are NULL.
+     */
     public static void alertUser(Context context, String msg) {
-    	if (context==null || msg==null) throw new NullPointerException();
-    	
+        if (context == null || msg == null) throw new NullPointerException();
+
         Toast t = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
         t.setGravity(Gravity.CENTER, 0, 0);
         t.show();

@@ -15,6 +15,7 @@
 package com.jwetherell.openmap.common;
 
 public class Ellipsoid {
+
     /** "Airy" */
     public final static Ellipsoid AIRY = new Ellipsoid("Airy", 6377563.0d, 0.00667054d);
     /** "Australian National" */
@@ -71,7 +72,7 @@ public class Ellipsoid {
      * The equitorial radius for this ellipsoid.
      */
     public final double radius;
-    
+
     /**
      * The polar radius for this ellipsoid.
      */
@@ -81,7 +82,7 @@ public class Ellipsoid {
      * The ellipsoid's eccentricity.
      */
     public final double ecc;
-    
+
     /**
      * The square of this ellipsoid's eccentricity.
      */
@@ -90,8 +91,10 @@ public class Ellipsoid {
     /**
      * Constructs a new Ellipsoid instance.
      * 
-     * @param radius The earth radius for this ellipsoid.
-     * @param eccsq The square of the eccentricity for this ellipsoid.
+     * @param radius
+     *            The earth radius for this ellipsoid.
+     * @param eccsq
+     *            The square of the eccentricity for this ellipsoid.
      */
     public Ellipsoid(String name, double radius, double eccsq) {
         this(name, radius, eccsq, Double.NaN, Double.NaN);
@@ -100,11 +103,16 @@ public class Ellipsoid {
     /**
      * Constructs a new Ellipsoid instance.
      * 
-     * @param name The name of the ellipsoid.
-     * @param equitorialRadius The earth equitorial radius for this ellipsoid.
-     * @param ecc The eccentricity for this ellipsoid.
-     * @param eccsq The square of the eccentricity for this ellipsoid.
-     * @param polarRadius The earth polar radius for this ellipsoid.
+     * @param name
+     *            The name of the ellipsoid.
+     * @param equitorialRadius
+     *            The earth equitorial radius for this ellipsoid.
+     * @param ecc
+     *            The eccentricity for this ellipsoid.
+     * @param eccsq
+     *            The square of the eccentricity for this ellipsoid.
+     * @param polarRadius
+     *            The earth polar radius for this ellipsoid.
      */
     public Ellipsoid(String name, double equitorialRadius, double ecc, double eccsq, double polarRadius) {
         this.name = name;
@@ -113,7 +121,7 @@ public class Ellipsoid {
         this.eccsq = eccsq;
         this.polarRadius = polarRadius;
     }
-    
+
     /**
      * Returns an array of all available ellipsoids in alphabetical order by
      * name.
@@ -121,12 +129,9 @@ public class Ellipsoid {
      * @return An Ellipsoid[] array containing all the available ellipsoids
      */
     public static Ellipsoid[] getAllEllipsoids() {
-        Ellipsoid[] all = { AIRY, AUSTRALIAN_NATIONAL, BESSEL_1841,
-                BESSEL_1841_NAMIBIA, CLARKE_1866, CLARKE_1880, EVEREST,
-                FISHER_1960_MERCURY, FISHER_1968, GRS_1967, GRS_1980,
-                HELMERT_1906, HOUGH, INTERNATIONAL, KRASSOVSKY, MODIFIED_AIRY,
-                MODIFIED_EVEREST, MODIFIED_FISCHER_1960, SOUTH_AMERICAN_1969,
-                WGS_60, WGS_66, WGS_72, WGS_84 };
+        Ellipsoid[] all = { AIRY, AUSTRALIAN_NATIONAL, BESSEL_1841, BESSEL_1841_NAMIBIA, CLARKE_1866, CLARKE_1880, EVEREST, FISHER_1960_MERCURY, FISHER_1968,
+                GRS_1967, GRS_1980, HELMERT_1906, HOUGH, INTERNATIONAL, KRASSOVSKY, MODIFIED_AIRY, MODIFIED_EVEREST, MODIFIED_FISCHER_1960,
+                SOUTH_AMERICAN_1969, WGS_60, WGS_66, WGS_72, WGS_84 };
 
         return all;
     }

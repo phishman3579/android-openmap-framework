@@ -15,6 +15,7 @@
 package com.jwetherell.openmap.common;
 
 public abstract class MoreMath {
+
     /**
      * 2*Math.PI
      */
@@ -36,32 +37,34 @@ public abstract class MoreMath {
     public static final transient double HALF_PI_D = Math.PI / 2.0d;
 
     /**
-     * Checks if a ~= b. Use this to test equality of floating point
-     * numbers.
+     * Checks if a ~= b. Use this to test equality of floating point numbers.
      * <p>
      * 
-     * @param a double
-     * @param b double
-     * @param epsilon the allowable error
+     * @param a
+     *            double
+     * @param b
+     *            double
+     * @param epsilon
+     *            the allowable error
      * @return boolean
      */
-    public static final boolean approximately_equal(double a, double b,
-                                                    double epsilon) {
+    public static final boolean approximately_equal(double a, double b, double epsilon) {
         return (Math.abs(a - b) <= epsilon);
     }
 
     /**
-     * Checks if a ~= b. Use this to test equality of floating point
-     * numbers.
+     * Checks if a ~= b. Use this to test equality of floating point numbers.
      * <p>
      * 
-     * @param a float
-     * @param b float
-     * @param epsilon the allowable error
+     * @param a
+     *            float
+     * @param b
+     *            float
+     * @param epsilon
+     *            the allowable error
      * @return boolean
      */
-    public static final boolean approximately_equal(float a, float b,
-                                                    float epsilon) {
+    public static final boolean approximately_equal(float a, float b, float epsilon) {
         return (Math.abs(a - b) <= epsilon);
     }
 
@@ -70,7 +73,8 @@ public abstract class MoreMath {
      * <p>
      * Hyperbolic arc sine: log (x+sqrt(1+x^2))
      * 
-     * @param x float
+     * @param x
+     *            float
      * @return float asinh(x)
      */
     public static final float asinh(float x) {
@@ -82,7 +86,8 @@ public abstract class MoreMath {
      * <p>
      * Hyperbolic arc sine: log (x+sqrt(1+x^2))
      * 
-     * @param x double
+     * @param x
+     *            double
      * @return double asinh(x)
      */
     public static final double asinh(double x) {
@@ -94,7 +99,8 @@ public abstract class MoreMath {
      * <p>
      * Hyperbolic sine: (e^x-e^-x)/2
      * 
-     * @param x float
+     * @param x
+     *            float
      * @return float sinh(x)
      */
     public static final float sinh(float x) {
@@ -106,7 +112,8 @@ public abstract class MoreMath {
      * <p>
      * Hyperbolic sine: (e^x-e^-x)/2
      * 
-     * @param x double
+     * @param x
+     *            double
      * @return double sinh(x)
      */
     public static final double sinh(double x) {
@@ -117,7 +124,8 @@ public abstract class MoreMath {
     /**
      * Return sign of number.
      * 
-     * @param x short
+     * @param x
+     *            short
      * @return int sign -1, 1
      */
     public static final int sign(short x) {
@@ -127,7 +135,8 @@ public abstract class MoreMath {
     /**
      * Return sign of number.
      * 
-     * @param x int
+     * @param x
+     *            int
      * @return int sign -1, 1
      */
     public static final int sign(int x) {
@@ -137,7 +146,8 @@ public abstract class MoreMath {
     /**
      * Return sign of number.
      * 
-     * @param x long
+     * @param x
+     *            long
      * @return int sign -1, 1
      */
     public static final int sign(long x) {
@@ -147,7 +157,8 @@ public abstract class MoreMath {
     /**
      * Return sign of number.
      * 
-     * @param x float
+     * @param x
+     *            float
      * @return int sign -1, 1
      */
     public static final int sign(float x) {
@@ -157,7 +168,8 @@ public abstract class MoreMath {
     /**
      * Return sign of number.
      * 
-     * @param x double
+     * @param x
+     *            double
      * @return int sign -1, 1
      */
     public static final int sign(double x) {
@@ -167,7 +179,8 @@ public abstract class MoreMath {
     /**
      * Check if number is odd.
      * 
-     * @param x short
+     * @param x
+     *            short
      * @return boolean
      */
     public static final boolean odd(short x) {
@@ -177,7 +190,8 @@ public abstract class MoreMath {
     /**
      * Check if number is odd.
      * 
-     * @param x int
+     * @param x
+     *            int
      * @return boolean
      */
     public static final boolean odd(int x) {
@@ -187,7 +201,8 @@ public abstract class MoreMath {
     /**
      * Check if number is odd.
      * 
-     * @param x long
+     * @param x
+     *            long
      * @return boolean
      */
     public static final boolean odd(long x) {
@@ -197,7 +212,8 @@ public abstract class MoreMath {
     /**
      * Check if number is even.
      * 
-     * @param x short
+     * @param x
+     *            short
      * @return boolean
      */
     public static final boolean even(short x) {
@@ -207,7 +223,8 @@ public abstract class MoreMath {
     /**
      * Check if number is even.
      * 
-     * @param x int
+     * @param x
+     *            int
      * @return boolean
      */
     public static final boolean even(int x) {
@@ -217,7 +234,8 @@ public abstract class MoreMath {
     /**
      * Check if number is even.
      * 
-     * @param x long
+     * @param x
+     *            long
      * @return boolean
      */
     public static final boolean even(long x) {
@@ -225,10 +243,11 @@ public abstract class MoreMath {
     }
 
     /**
-     * Converts a byte in the range of -128 to 127 to an int in the
-     * range 0 - 255.
+     * Converts a byte in the range of -128 to 127 to an int in the range 0 -
+     * 255.
      * 
-     * @param b (-128 &lt;= b &lt;= 127)
+     * @param b
+     *            (-128 &lt;= b &lt;= 127)
      * @return int (0 &lt;= b &lt;= 255)
      */
     public static final int signedToInt(byte b) {
@@ -236,10 +255,11 @@ public abstract class MoreMath {
     }
 
     /**
-     * Converts a short in the range of -32768 to 32767 to an int in
-     * the range 0 - 65535.
+     * Converts a short in the range of -32768 to 32767 to an int in the range 0
+     * - 65535.
      * 
-     * @param w (-32768 &lt;= b &lt;= 32767)
+     * @param w
+     *            (-32768 &lt;= b &lt;= 32767)
      * @return int (0 &lt;= b &lt;= 65535)
      */
     public static final int signedToInt(short w) {
@@ -247,10 +267,11 @@ public abstract class MoreMath {
     }
 
     /**
-     * Convert an int in the range of -2147483648 to 2147483647 to a
-     * long in the range 0 to 4294967295.
+     * Convert an int in the range of -2147483648 to 2147483647 to a long in the
+     * range 0 to 4294967295.
      * 
-     * @param x (-2147483648 &lt;= x &lt;= 2147483647)
+     * @param x
+     *            (-2147483648 &lt;= x &lt;= 2147483647)
      * @return long (0 &lt;= x &lt;= 4294967295)
      */
     public static final long signedToLong(int x) {
@@ -258,10 +279,11 @@ public abstract class MoreMath {
     }
 
     /**
-     * Converts an int in the range of 0 - 65535 to an int in the
-     * range of 0 - 255.
+     * Converts an int in the range of 0 - 65535 to an int in the range of 0 -
+     * 255.
      * 
-     * @param w int (0 &lt;= w &lt;= 65535)
+     * @param w
+     *            int (0 &lt;= w &lt;= 65535)
      * @return int (0 &lt;= w &lt;= 255)
      */
     public static final int wordToByte(int w) {
@@ -271,8 +293,10 @@ public abstract class MoreMath {
     /**
      * Build short out of bytes (in big endian order).
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
      * @return short
      */
     public static final short BuildShortBE(byte bytevec[], int offset) {
@@ -282,8 +306,10 @@ public abstract class MoreMath {
     /**
      * Build short out of bytes (in little endian order).
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
      * @return short
      */
     public static final short BuildShortLE(byte bytevec[], int offset) {
@@ -293,13 +319,15 @@ public abstract class MoreMath {
     /**
      * Build short out of bytes.
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
+     * @param MSBFirst
+     *            BE or LE?
      * @return short
      */
-    public static final short BuildShort(byte bytevec[], int offset,
-                                         boolean MSBFirst) {
+    public static final short BuildShort(byte bytevec[], int offset, boolean MSBFirst) {
         if (MSBFirst) {
             return (BuildShortBE(bytevec, offset));
         } else {
@@ -310,8 +338,10 @@ public abstract class MoreMath {
     /**
      * Build short out of bytes (in big endian order).
      * 
-     * @param bytevec bytes
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param MSBFirst
+     *            BE or LE?
      * @return short
      */
 
@@ -322,8 +352,10 @@ public abstract class MoreMath {
     /**
      * Build short out of bytes (in little endian order).
      * 
-     * @param bytevec bytes
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param MSBFirst
+     *            BE or LE?
      * @return short
      */
     public static final short BuildShortLE(byte bytevec[], boolean MSBFirst) {
@@ -333,8 +365,10 @@ public abstract class MoreMath {
     /**
      * Build short out of bytes.
      * 
-     * @param bytevec bytes
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param MSBFirst
+     *            BE or LE?
      * @return short
      */
     public static final short BuildShort(byte bytevec[], boolean MSBFirst) {
@@ -344,49 +378,50 @@ public abstract class MoreMath {
     /**
      * Build int out of bytes (in big endian order).
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
      * @return int
      */
     public static final int BuildIntegerBE(byte bytevec[], int offset) {
-        return (((int) (bytevec[0 + offset]) << 24)
-                | (signedToInt(bytevec[1 + offset]) << 16)
-                | (signedToInt(bytevec[2 + offset]) << 8) | (signedToInt(bytevec[3 + offset])));
+        return (((int) (bytevec[0 + offset]) << 24) | (signedToInt(bytevec[1 + offset]) << 16) | (signedToInt(bytevec[2 + offset]) << 8) | (signedToInt(bytevec[3 + offset])));
     }
 
     /**
      * Build int out of bytes (in little endian order).
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
      * @return int
      */
     public static final int BuildIntegerLE(byte bytevec[], int offset) {
-        return (((int) (bytevec[3 + offset]) << 24)
-                | (signedToInt(bytevec[2 + offset]) << 16)
-                | (signedToInt(bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
+        return (((int) (bytevec[3 + offset]) << 24) | (signedToInt(bytevec[2 + offset]) << 16) | (signedToInt(bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
     }
 
     /**
      * Build int out of bytes.
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
+     * @param MSBFirst
+     *            BE or LE?
      * @return int
      */
-    public static final int BuildInteger(byte bytevec[], int offset,
-                                         boolean MSBFirst) {
-        if (MSBFirst)
-            return BuildIntegerBE(bytevec, offset);
-        else
-            return BuildIntegerLE(bytevec, offset);
+    public static final int BuildInteger(byte bytevec[], int offset, boolean MSBFirst) {
+        if (MSBFirst) return BuildIntegerBE(bytevec, offset);
+        else return BuildIntegerLE(bytevec, offset);
     }
 
     /**
      * Build int out of bytes (in big endian order).
      * 
-     * @param bytevec bytes
+     * @param bytevec
+     *            bytes
      * @return int
      */
     public static final int BuildIntegerBE(byte bytevec[]) {
@@ -396,7 +431,8 @@ public abstract class MoreMath {
     /**
      * Build int out of bytes (in little endian order).
      * 
-     * @param bytevec bytes
+     * @param bytevec
+     *            bytes
      * @return int
      */
     public static final int BuildIntegerLE(byte bytevec[]) {
@@ -406,71 +442,70 @@ public abstract class MoreMath {
     /**
      * Build int out of bytes.
      * 
-     * @param bytevec bytes
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param MSBFirst
+     *            BE or LE?
      * @return int
      */
     public static final int BuildInteger(byte bytevec[], boolean MSBFirst) {
-        if (MSBFirst)
-            return BuildIntegerBE(bytevec, 0);
-        else
-            return BuildIntegerLE(bytevec, 0);
+        if (MSBFirst) return BuildIntegerBE(bytevec, 0);
+        else return BuildIntegerLE(bytevec, 0);
     }
 
     /**
      * Build long out of bytes (in big endian order).
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
      * @return long
      */
     public static final long BuildLongBE(byte bytevec[], int offset) {
-        return (((long) signedToInt(bytevec[0 + offset]) << 56)
-                | ((long) signedToInt(bytevec[1 + offset]) << 48)
-                | ((long) signedToInt(bytevec[2 + offset]) << 40)
-                | ((long) signedToInt(bytevec[3 + offset]) << 32)
-                | ((long) signedToInt(bytevec[4 + offset]) << 24)
-                | ((long) signedToInt(bytevec[5 + offset]) << 16)
+        return (((long) signedToInt(bytevec[0 + offset]) << 56) | ((long) signedToInt(bytevec[1 + offset]) << 48)
+                | ((long) signedToInt(bytevec[2 + offset]) << 40) | ((long) signedToInt(bytevec[3 + offset]) << 32)
+                | ((long) signedToInt(bytevec[4 + offset]) << 24) | ((long) signedToInt(bytevec[5 + offset]) << 16)
                 | ((long) signedToInt(bytevec[6 + offset]) << 8) | ((long) signedToInt(bytevec[7 + offset])));
     }
 
     /**
      * Build long out of bytes (in little endian order).
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
      * @return long
      */
     public static final long BuildLongLE(byte bytevec[], int offset) {
-        return (((long) signedToInt(bytevec[7 + offset]) << 56)
-                | ((long) signedToInt(bytevec[6 + offset]) << 48)
-                | ((long) signedToInt(bytevec[5 + offset]) << 40)
-                | ((long) signedToInt(bytevec[4 + offset]) << 32)
-                | ((long) signedToInt(bytevec[3 + offset]) << 24)
-                | ((long) signedToInt(bytevec[2 + offset]) << 16)
+        return (((long) signedToInt(bytevec[7 + offset]) << 56) | ((long) signedToInt(bytevec[6 + offset]) << 48)
+                | ((long) signedToInt(bytevec[5 + offset]) << 40) | ((long) signedToInt(bytevec[4 + offset]) << 32)
+                | ((long) signedToInt(bytevec[3 + offset]) << 24) | ((long) signedToInt(bytevec[2 + offset]) << 16)
                 | ((long) signedToInt(bytevec[1 + offset]) << 8) | ((long) signedToInt(bytevec[0 + offset])));
     }
 
     /**
      * Build long out of bytes.
      * 
-     * @param bytevec bytes
-     * @param offset byte offset
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param offset
+     *            byte offset
+     * @param MSBFirst
+     *            BE or LE?
      * @return long
      */
-    public static final long BuildLong(byte bytevec[], int offset,
-                                       boolean MSBFirst) {
-        if (MSBFirst)
-            return BuildLongBE(bytevec, offset);
-        else
-            return BuildLongLE(bytevec, offset);
+    public static final long BuildLong(byte bytevec[], int offset, boolean MSBFirst) {
+        if (MSBFirst) return BuildLongBE(bytevec, offset);
+        else return BuildLongLE(bytevec, offset);
     }
 
     /**
      * Build long out of bytes (in big endian order).
      * 
-     * @param bytevec bytes
+     * @param bytevec
+     *            bytes
      * @return long
      */
     public static final long BuildLongBE(byte bytevec[]) {
@@ -480,7 +515,8 @@ public abstract class MoreMath {
     /**
      * Build long out of bytes (in little endian order).
      * 
-     * @param bytevec bytes
+     * @param bytevec
+     *            bytes
      * @return long
      */
     public static final long BuildLongLE(byte bytevec[]) {
@@ -490,14 +526,14 @@ public abstract class MoreMath {
     /**
      * Build long out of bytes.
      * 
-     * @param bytevec bytes
-     * @param MSBFirst BE or LE?
+     * @param bytevec
+     *            bytes
+     * @param MSBFirst
+     *            BE or LE?
      * @return long
      */
     public static final long BuildLong(byte bytevec[], boolean MSBFirst) {
-        if (MSBFirst)
-            return BuildLongBE(bytevec, 0);
-        else
-            return BuildLongLE(bytevec, 0);
+        if (MSBFirst) return BuildLongBE(bytevec, 0);
+        else return BuildLongLE(bytevec, 0);
     }
 }

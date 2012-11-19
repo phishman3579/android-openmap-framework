@@ -15,6 +15,7 @@
 package com.jwetherell.openmap.common;
 
 public abstract class Planet {
+
     // Solar system id's. Add new ones as needed.
     final public static transient int Earth = 3;
     final public static transient int Mars = 4;
@@ -27,16 +28,13 @@ public abstract class Planet {
     /* 1 - (minor/major) = 1/298.257 */
     final public static transient float wgs84_earthFlat = 1 - (wgs84_earthPolarRadiusMeters / wgs84_earthEquatorialRadiusMeters);
     /* sqrt(2*f - f^2) = 0.081819221f */
-    final public static transient float wgs84_earthEccen = (float) Math.sqrt(2
-            * wgs84_earthFlat - (wgs84_earthFlat * wgs84_earthFlat));
-    final public static transient float wgs84_earthEquatorialCircumferenceMeters = MoreMath.TWO_PI
-            * wgs84_earthEquatorialRadiusMeters;
+    final public static transient float wgs84_earthEccen = (float) Math.sqrt(2 * wgs84_earthFlat - (wgs84_earthFlat * wgs84_earthFlat));
+    final public static transient float wgs84_earthEquatorialCircumferenceMeters = MoreMath.TWO_PI * wgs84_earthEquatorialRadiusMeters;
     final public static transient float wgs84_earthEquatorialCircumferenceKM = wgs84_earthEquatorialCircumferenceMeters / 1000f;
     final public static transient float wgs84_earthEquatorialCircumferenceMiles = wgs84_earthEquatorialCircumferenceKM * 0.62137119f;// HACK
     /* 60.0f * 360.0f -- sixty nm per degree units? */
     final public static transient float wgs84_earthEquatorialCircumferenceNMiles = 21600.0f;
-    final public static transient double wgs84_earthEquatorialCircumferenceMeters_D = MoreMath.TWO_PI_D
-            * wgs84_earthEquatorialRadiusMeters_D;
+    final public static transient double wgs84_earthEquatorialCircumferenceMeters_D = MoreMath.TWO_PI_D * wgs84_earthEquatorialRadiusMeters_D;
     final public static transient double wgs84_earthEquatorialCircumferenceKM_D = wgs84_earthEquatorialCircumferenceMeters_D / 1000;
     final public static transient double wgs84_earthEquatorialCircumferenceMiles_D = wgs84_earthEquatorialCircumferenceKM_D * 0.62137119;// HACK
     /* 60.0f * 360.0f; sixty nm per degree */// units?
@@ -58,8 +56,9 @@ public abstract class Planet {
     /* 1 - (minor/major) = 1/297 */
     final public static transient float international1974_earthFlat = 1 - (international1974_earthPolarRadiusMeters / international1974_earthEquatorialRadiusMeters);
     /*
-     * Extra scale constant for better viewing of maps (do not use
-     * this to calculate anything but points to be viewed!) 3384: mattserver/Map.C, 3488: dcw
+     * Extra scale constant for better viewing of maps (do not use this to
+     * calculate anything but points to be viewed!) 3384: mattserver/Map.C,
+     * 3488: dcw
      */
     public transient static int defaultPixelsPerMeter = 3272;
 }

@@ -16,132 +16,135 @@ import com.jwetherell.openmap.overlay.HashMapItemizedOverlay;
 
 
 /**
- * This class extends CustomMapActivity to keep the current location centered on the screen.
+ * This class extends CustomMapActivity to keep the current location centered on
+ * the screen.
  * 
  * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public abstract class CenteredMapActivity extends CustomMapActivity {
-	protected static List<Overlay> mapOverlays = null;
 
-	protected static HashMapItemizedOverlay gpsOverlay = null;
-	private static OverlayItem overlayItem = null;
-	private static Drawable icon = null;
+    protected static List<Overlay> mapOverlays = null;
 
-	protected static LocationManager locationManager = null;
-	protected static LocationListener locationListener = null;
-	protected static int minMeters = 10;
-	protected static int minTime = 10;
+    protected static HashMapItemizedOverlay gpsOverlay = null;
+    private static OverlayItem overlayItem = null;
+    private static Drawable icon = null;
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		// Get the location manager
-		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		UserData.setLocation(locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER));
-		locationListener = new MapLocationListener();
-
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters, locationListener);
-
-		// Find the most recent lat/lon or if none use the default
-		GeoPoint point = new GeoPoint(UserData.getLatitudeE6(), UserData.getLongitudeE6());
-
-		// Move the map view to the point
-		mapController.animateTo(point);
-
-		// Get the overlays and add our GPS point
-		mapOverlays = mapView.getOverlays();
-		icon = getResources().getDrawable(R.drawable.icon);
-		gpsOverlay = new HashMapItemizedOverlay(icon);
-		overlayItem = new OverlayItem(point, "MyGps", "The current position of my GPS");
-		gpsOverlay.addOverlay(overlayItem);
-		mapOverlays.add(gpsOverlay);
-	}
+    protected static LocationManager locationManager = null;
+    protected static LocationListener locationListener = null;
+    protected static int minMeters = 10;
+    protected static int minTime = 10;
 
     /**
      * {@inheritDoc}
      */
     @Override
-	public void onDestroy() {
-		super.onDestroy();
-		locationManager.removeUpdates(locationListener);
-	}
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Get the location manager
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        UserData.setLocation(locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER));
+        locationListener = new MapLocationListener();
+
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters, locationListener);
+
+        // Find the most recent lat/lon or if none use the default
+        GeoPoint point = new GeoPoint(UserData.getLatitudeE6(), UserData.getLongitudeE6());
+
+        // Move the map view to the point
+        mapController.animateTo(point);
+
+        // Get the overlays and add our GPS point
+        mapOverlays = mapView.getOverlays();
+        icon = getResources().getDrawable(R.drawable.icon);
+        gpsOverlay = new HashMapItemizedOverlay(icon);
+        overlayItem = new OverlayItem(point, "MyGps", "The current position of my GPS");
+        gpsOverlay.addOverlay(overlayItem);
+        mapOverlays.add(gpsOverlay);
+    }
 
     /**
      * {@inheritDoc}
      */
     @Override
-	public void onStart() {
-		super.onStart();
-		setCenterOnGps();
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters,locationListener);
-	}
+    public void onDestroy() {
+        super.onDestroy();
+        locationManager.removeUpdates(locationListener);
+    }
 
     /**
      * {@inheritDoc}
      */
     @Override
-	public void onStop() {
-		super.onStop();
-		locationManager.removeUpdates(locationListener);
-	}
+    public void onStart() {
+        super.onStart();
+        setCenterOnGps();
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters, locationListener);
+    }
 
     /**
      * {@inheritDoc}
      */
     @Override
-	public void onResume() {
-		super.onResume();
-		setCenterOnGps();
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters,locationListener);
-	}
+    public void onStop() {
+        super.onStop();
+        locationManager.removeUpdates(locationListener);
+    }
 
     /**
      * {@inheritDoc}
      */
     @Override
-	public void onPause() {
-		super.onPause();
-		locationManager.removeUpdates(locationListener);
-	}
+    public void onResume() {
+        super.onResume();
+        setCenterOnGps();
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minMeters, locationListener);
+    }
 
-	protected void setCenterOnGps() {
-		Location loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		updateLocation(loc);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void onPause() {
+        super.onPause();
+        locationManager.removeUpdates(locationListener);
+    }
 
-	protected void updateLocation(Location loc) {
-		UserData.setLocation(loc);
-		GeoPoint point = new GeoPoint(UserData.getLatitudeE6(), UserData.getLongitudeE6());
-		
-		gpsOverlay.removeOverlay(overlayItem);
-		gpsOverlay.addOverlay(new OverlayItem(point, "MyGps", "The current position of my GPS"));
-		mapView.invalidate();
+    protected void setCenterOnGps() {
+        Location loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        updateLocation(loc);
+    }
 
-		mapController.animateTo(point);
-	}
+    protected void updateLocation(Location loc) {
+        UserData.setLocation(loc);
+        GeoPoint point = new GeoPoint(UserData.getLatitudeE6(), UserData.getLongitudeE6());
 
-	private class MapLocationListener implements LocationListener {
-		public void onLocationChanged(Location loc) {
-			if (loc == null) throw new NullPointerException();
-			
-			UserData.setLocation(loc);
-			updateLocation(loc);
-		}
+        gpsOverlay.removeOverlay(overlayItem);
+        gpsOverlay.addOverlay(new OverlayItem(point, "MyGps", "The current position of my GPS"));
+        mapView.invalidate();
 
-		public void onProviderDisabled(String provider) {
-			// Ignore
-		}
+        mapController.animateTo(point);
+    }
 
-		public void onProviderEnabled(String provider) {
-			// Ignore
-		}
+    private class MapLocationListener implements LocationListener {
 
-		public void onStatusChanged(String provider, int status, Bundle extras) {
-			// Ignore
-		}
-	}
+        public void onLocationChanged(Location loc) {
+            if (loc == null) throw new NullPointerException();
+
+            UserData.setLocation(loc);
+            updateLocation(loc);
+        }
+
+        public void onProviderDisabled(String provider) {
+            // Ignore
+        }
+
+        public void onProviderEnabled(String provider) {
+            // Ignore
+        }
+
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+            // Ignore
+        }
+    }
 }

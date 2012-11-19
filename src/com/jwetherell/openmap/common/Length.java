@@ -15,6 +15,7 @@
 package com.jwetherell.openmap.common;
 
 public class Length {
+
     /** Miles, in WGS 84 spherical earth model units. */
     public final static Length MILE = new Length("mile", "miles", Planet.wgs84_earthEquatorialCircumferenceMiles_D);
     /** Feet, in WGS 84 spherical earth model units. */
@@ -32,6 +33,7 @@ public class Length {
 
     /** Radians, in terms of a spherical earth. */
     public final static Length RADIAN = new Length("radian", "rad", MoreMath.TWO_PI_D) {
+
         public float toRadians(float numUnits) {
             return numUnits;
         }
@@ -48,7 +50,7 @@ public class Length {
             return numRadians;
         }
     };
-    
+
     /** Unit/radians */
     protected final double constant;
     protected final String name;
@@ -126,8 +128,7 @@ public class Length {
         Length[] choices = getAvailable();
 
         for (int i = 0; i < choices.length; i++) {
-            if (name.toLowerCase().intern() == choices[i].toString()
-                    || name.toLowerCase().intern() == choices[i].getAbbr()) {
+            if (name.toLowerCase().intern() == choices[i].toString() || name.toLowerCase().intern() == choices[i].getAbbr()) {
                 return choices[i];
             }
         }
