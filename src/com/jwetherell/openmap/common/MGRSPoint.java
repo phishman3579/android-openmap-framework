@@ -143,7 +143,7 @@ public class MGRSPoint extends ZonedUTMPoint {
 
         // Should we check the zone letter here? Why not.
         if (zone_letter <= 'A' || zone_letter == 'B' || zone_letter == 'Y' || zone_letter >= 'Z' || zone_letter == 'I' || zone_letter == 'O') {
-            throw new NumberFormatException("MGRSPoint zone letter " + (char) zone_letter + " not handled: " + mgrsString);
+            throw new NumberFormatException("MGRSPoint zone letter " + zone_letter + " not handled: " + mgrsString);
         }
 
         hunK = mgrsString.substring(i, i += 2);
@@ -345,11 +345,10 @@ public class MGRSPoint extends ZonedUTMPoint {
             default:
                 northing = -1.0f;
         }
-        if (northing >= 0.0) {
+        if (northing >= 0.0)
             return northing;
-        } else {
-            throw new NumberFormatException("Invalid zone letter: " + zone_letter);
-        }
+        // else
+        throw new NumberFormatException("Invalid zone letter: " + zone_letter);
     }
 
     /**
@@ -414,7 +413,7 @@ public class MGRSPoint extends ZonedUTMPoint {
      * @return MGRSPoint with values converted from lat/lon.
      */
     public static MGRSPoint LLtoMGRS(LatLonPoint llp, Ellipsoid ellip, MGRSPoint mgrsp) {
-        if (mgrsp == null || !(mgrsp instanceof MGRSPoint)) {
+        if (mgrsp == null) {
             mgrsp = new MGRSPoint();
         }
 
@@ -433,11 +432,10 @@ public class MGRSPoint extends ZonedUTMPoint {
      * @return N of given zone is equal or larger than N, S otherwise.
      */
     public static char MGRSZoneToUTMZone(char mgrsZone) {
-        if (Character.toUpperCase(mgrsZone) >= 'N') {
+        if (Character.toUpperCase(mgrsZone) >= 'N')
             return 'N';
-        } else {
-            return 'S';
-        }
+        // else
+        return 'S';
     }
 
     /**

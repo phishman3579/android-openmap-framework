@@ -64,7 +64,7 @@ public abstract class ProjMath {
     /**
      * Longitude range in radians.
      */
-    public static final transient float LON_RANGE_F = (float) MoreMath.TWO_PI;
+    public static final transient float LON_RANGE_F = MoreMath.TWO_PI;
 
     /**
      * Longitude range in radians.
@@ -143,7 +143,7 @@ public abstract class ProjMath {
      * @return double decimal degrees
      */
     public static final double SC_TO_DEG(int sc) {
-        return ((double) (sc) / (60.0 * 60.0 * 1000.0));
+        return ((sc) / (60.0 * 60.0 * 1000.0));
     }
 
     /**
@@ -178,7 +178,7 @@ public abstract class ProjMath {
      * @return float decimal degrees
      */
     public static final float radToDeg(float rad) {
-        return (float) Math.toDegrees((double) rad);
+        return (float) Math.toDegrees(rad);
     }
 
     /**
@@ -200,7 +200,7 @@ public abstract class ProjMath {
      * @return float radians
      */
     public static final float degToRad(float deg) {
-        return (float) Math.toRadians((double) deg);
+        return (float) Math.toRadians(deg);
     }
 
     /**

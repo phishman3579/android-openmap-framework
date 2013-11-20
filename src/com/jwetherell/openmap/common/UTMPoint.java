@@ -416,9 +416,8 @@ public class UTMPoint {
         if (llpoint != null) {
             llpoint.setLatLon(lat, lon);
             return llpoint;
-        } else {
-            return new LatLonPoint(lat, lon);
         }
+        return new LatLonPoint(lat, lon);
     }
 
     /**

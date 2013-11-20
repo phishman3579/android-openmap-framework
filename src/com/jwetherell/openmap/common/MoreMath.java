@@ -91,7 +91,7 @@ public abstract class MoreMath {
      * @return double asinh(x)
      */
     public static final double asinh(double x) {
-        return (double) Math.log(x + Math.sqrt(x * x + 1));
+        return Math.log(x + Math.sqrt(x * x + 1));
     }
 
     /**
@@ -117,7 +117,7 @@ public abstract class MoreMath {
      * @return double sinh(x)
      */
     public static final double sinh(double x) {
-        return (double) (Math.pow(Math.E, x) - Math.pow(Math.E, -x)) / 2.0d;
+        return (Math.pow(Math.E, x) - Math.pow(Math.E, -x)) / 2.0d;
     }
 
     // HACK - are there functions that already exist?
@@ -251,7 +251,7 @@ public abstract class MoreMath {
      * @return int (0 &lt;= b &lt;= 255)
      */
     public static final int signedToInt(byte b) {
-        return ((int) b & 0xff);
+        return (b & 0xff);
     }
 
     /**
@@ -263,7 +263,7 @@ public abstract class MoreMath {
      * @return int (0 &lt;= b &lt;= 65535)
      */
     public static final int signedToInt(short w) {
-        return ((int) w & 0xffff);
+        return (w & 0xffff);
     }
 
     /**
@@ -275,7 +275,7 @@ public abstract class MoreMath {
      * @return long (0 &lt;= x &lt;= 4294967295)
      */
     public static final long signedToLong(int x) {
-        return ((long) x & 0xFFFFFFFFL);
+        return (x & 0xFFFFFFFFL);
     }
 
     /**
@@ -300,7 +300,7 @@ public abstract class MoreMath {
      * @return short
      */
     public static final short BuildShortBE(byte bytevec[], int offset) {
-        return (short) (((int) (bytevec[0 + offset]) << 8) | (signedToInt(bytevec[1 + offset])));
+        return (short) (((bytevec[0 + offset]) << 8) | (signedToInt(bytevec[1 + offset])));
     }
 
     /**
@@ -313,7 +313,7 @@ public abstract class MoreMath {
      * @return short
      */
     public static final short BuildShortLE(byte bytevec[], int offset) {
-        return (short) (((int) (bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
+        return (short) (((bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
     }
 
     /**
@@ -328,11 +328,10 @@ public abstract class MoreMath {
      * @return short
      */
     public static final short BuildShort(byte bytevec[], int offset, boolean MSBFirst) {
-        if (MSBFirst) {
+        if (MSBFirst)
             return (BuildShortBE(bytevec, offset));
-        } else {
-            return (BuildShortLE(bytevec, offset));
-        }
+        // else
+        return (BuildShortLE(bytevec, offset));
     }
 
     /**
@@ -385,7 +384,7 @@ public abstract class MoreMath {
      * @return int
      */
     public static final int BuildIntegerBE(byte bytevec[], int offset) {
-        return (((int) (bytevec[0 + offset]) << 24) | (signedToInt(bytevec[1 + offset]) << 16) | (signedToInt(bytevec[2 + offset]) << 8) | (signedToInt(bytevec[3 + offset])));
+        return (((bytevec[0 + offset]) << 24) | (signedToInt(bytevec[1 + offset]) << 16) | (signedToInt(bytevec[2 + offset]) << 8) | (signedToInt(bytevec[3 + offset])));
     }
 
     /**
@@ -398,7 +397,7 @@ public abstract class MoreMath {
      * @return int
      */
     public static final int BuildIntegerLE(byte bytevec[], int offset) {
-        return (((int) (bytevec[3 + offset]) << 24) | (signedToInt(bytevec[2 + offset]) << 16) | (signedToInt(bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
+        return (((bytevec[3 + offset]) << 24) | (signedToInt(bytevec[2 + offset]) << 16) | (signedToInt(bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
     }
 
     /**
@@ -413,8 +412,10 @@ public abstract class MoreMath {
      * @return int
      */
     public static final int BuildInteger(byte bytevec[], int offset, boolean MSBFirst) {
-        if (MSBFirst) return BuildIntegerBE(bytevec, offset);
-        else return BuildIntegerLE(bytevec, offset);
+        if (MSBFirst) 
+            return BuildIntegerBE(bytevec, offset);
+        // else
+        return BuildIntegerLE(bytevec, offset);
     }
 
     /**
@@ -449,8 +450,10 @@ public abstract class MoreMath {
      * @return int
      */
     public static final int BuildInteger(byte bytevec[], boolean MSBFirst) {
-        if (MSBFirst) return BuildIntegerBE(bytevec, 0);
-        else return BuildIntegerLE(bytevec, 0);
+        if (MSBFirst) 
+            return BuildIntegerBE(bytevec, 0);
+        //else 
+        return BuildIntegerLE(bytevec, 0);
     }
 
     /**
@@ -466,7 +469,7 @@ public abstract class MoreMath {
         return (((long) signedToInt(bytevec[0 + offset]) << 56) | ((long) signedToInt(bytevec[1 + offset]) << 48)
                 | ((long) signedToInt(bytevec[2 + offset]) << 40) | ((long) signedToInt(bytevec[3 + offset]) << 32)
                 | ((long) signedToInt(bytevec[4 + offset]) << 24) | ((long) signedToInt(bytevec[5 + offset]) << 16)
-                | ((long) signedToInt(bytevec[6 + offset]) << 8) | ((long) signedToInt(bytevec[7 + offset])));
+                | ((long) signedToInt(bytevec[6 + offset]) << 8) | (signedToInt(bytevec[7 + offset])));
     }
 
     /**
@@ -482,7 +485,7 @@ public abstract class MoreMath {
         return (((long) signedToInt(bytevec[7 + offset]) << 56) | ((long) signedToInt(bytevec[6 + offset]) << 48)
                 | ((long) signedToInt(bytevec[5 + offset]) << 40) | ((long) signedToInt(bytevec[4 + offset]) << 32)
                 | ((long) signedToInt(bytevec[3 + offset]) << 24) | ((long) signedToInt(bytevec[2 + offset]) << 16)
-                | ((long) signedToInt(bytevec[1 + offset]) << 8) | ((long) signedToInt(bytevec[0 + offset])));
+                | ((long) signedToInt(bytevec[1 + offset]) << 8) | (signedToInt(bytevec[0 + offset])));
     }
 
     /**
@@ -497,8 +500,10 @@ public abstract class MoreMath {
      * @return long
      */
     public static final long BuildLong(byte bytevec[], int offset, boolean MSBFirst) {
-        if (MSBFirst) return BuildLongBE(bytevec, offset);
-        else return BuildLongLE(bytevec, offset);
+        if (MSBFirst) 
+            return BuildLongBE(bytevec, offset);
+        // else 
+        return BuildLongLE(bytevec, offset);
     }
 
     /**
@@ -533,7 +538,9 @@ public abstract class MoreMath {
      * @return long
      */
     public static final long BuildLong(byte bytevec[], boolean MSBFirst) {
-        if (MSBFirst) return BuildLongBE(bytevec, 0);
-        else return BuildLongLE(bytevec, 0);
+        if (MSBFirst) 
+            return BuildLongBE(bytevec, 0);
+        // else 
+        return BuildLongLE(bytevec, 0);
     }
 }
