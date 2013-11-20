@@ -8,10 +8,10 @@ This framework allows Android to access some of the OpenMap functionalities.
 This framework is designed to let Android developers access some functionalities of OpenMap.
 
 * Created by Justin Wetherell
-* google: http://code.google.com/p/android-openmap-framework
-* github: http://github.com/phishman3579/android-openmap-framework
-* linkedIn: http://www.linkedin.com/in/phishman3579
-* e-mail: phishman3579@gmail.com
+* Google: http://code.google.com/p/android-openmap-framework
+* Github: http://github.com/phishman3579/android-openmap-framework
+* LinkedIn: http://www.linkedin.com/in/phishman3579
+* E-mail: phishman3579@gmail.com
 * Twitter: http://twitter.com/phishman3579
 
 ## Details
@@ -23,3 +23,4 @@ Be sure to set the mapKey in res/values/strings.xml
     <string name="mapKey"></string>
 
 The source code also contains a demo to walk you through using the OpenMap utility functions.
+
