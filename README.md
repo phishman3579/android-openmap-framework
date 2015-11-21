@@ -8,6 +8,7 @@ This framework allows Android to access some of the OpenMap functionalities.
 This framework is designed to let Android developers access some functionalities of OpenMap.
 
 * Created by Justin Wetherell
+* For questions use: http://groups.google.com/forum/#!forum/android-openmap-framework
 * Google: http://code.google.com/p/android-openmap-framework
 * Github: http://github.com/phishman3579/android-openmap-framework
 * LinkedIn: http://www.linkedin.com/in/phishman3579
